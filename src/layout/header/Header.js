@@ -44,7 +44,12 @@ const Header = ({ fixed, theme, visibility, toggleSidebar, mobileView, className
             ) : window.location.pathname.split("/")[2] === "invest" ? (
               <InvestmentMenu />
             ) : mobileView ? (
-              <MobileMenu data={menu} sidebarToggle={toggleSidebar} mobileView={mobileView} />
+              <>
+                <MobileMenu data={menu[0].subMenu[menu[0].subMenu.length - 1].subPanel} mobileView={mobileView} />
+                {
+                  // <MobileMenu data={menu} sidebarToggle={toggleSidebar} mobileView={mobileView} />
+                }
+              </>
             ) : (
               <InvestmentMenu />
             )}
