@@ -35,13 +35,15 @@ const InvestmentProcess = ({ match }) => {
   const [sliderVal, setSliderVal] = useState();
   const [modal, setModal] = useState(false);
   const [confirmModal, setConfirmModal] = useState(false);
-  const [wallet, setWallet] = useState({
-    label: "Nio",
-    value: "2.014095 BTC ( $18,934.84 )",
+  const [paymentMethod, setPaymentMethod] = useState({
+    label: "BTC",
+    amount: "",
+    address: "1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa",
   });
 
   useEffect(() => {
-    let foundEl = pricingTableDataV1.find((item) => item.id === "plan-iv-1");
+    let foundEl = pricingTableDataV1.find((item) => item.id === "plan-iv-2");
+    console.log(foundEl);
     if (foundEl) {
       setCurrentPlan(foundEl);
       setRangVal(Number(returnCurrency(currency, foundEl.minDeposit).value).toFixed(0));
@@ -184,147 +186,147 @@ const InvestmentProcess = ({ match }) => {
                       </DropdownMenu>
                     </UncontrolledDropdown>
                   </div>
+                  {
+                    // <div className="form-group invest-field">
+                    //   <div className="form-label-group">
+                    //     <label className="form-label">Choose Quick Amount to Deposit</label>
+                    //   </div>
+                    //   <div className="invest-amount-group g-2">
+                    //     {
+                    //       //     returnLevel(currency, currentPlan.investLevels).map((par, index) => (
+                    //       //     <div
+                    //       //       className="invest-amount-item"
+                    //       //       key={index}
+                    //       //       onClick={() => {
+                    //       //         setRangVal(par);
+                    //       //         setSliderVal(par);
+                    //       //       }}
+                    //       //     >
+                    //       //       <input
+                    //       //         type="radio"
+                    //       //         className="invest-amount-control"
+                    //       //         name="iv-amount"
+                    //       //         checked={rangeVal === par}
+                    //       //         onChange={() => null}
+                    //       //         id={`iv-amount-${par}`}
+                    //       //       />
+                    //       //       <label className="invest-amount-label" htmlFor={`iv-amount-${par}`}>
+                    //       //         {currency === "btc" ? Number(par).toFixed(6) : par} {currency.toUpperCase()}
+                    //       //       </label>
+                    //       //     </div>
+                    //       //   ))
+                    //     }
+                    //   </div>
+                    // </div>
+                  }
                   <div className="form-group invest-field">
-                    <div className="form-label-group">
-                      <label className="form-label">Choose Quick Amount to Deposit</label>
-                    </div>
-                    <div className="invest-amount-group g-2">
-                      {returnLevel(currency, currentPlan.investLevels).map((par, index) => (
-                        <div
-                          className="invest-amount-item"
-                          key={index}
-                          onClick={() => {
-                            setRangVal(par);
-                            setSliderVal(par);
-                          }}
-                        >
-                          <input
-                            type="radio"
-                            className="invest-amount-control"
-                            name="iv-amount"
-                            checked={rangeVal === par}
-                            onChange={() => null}
-                            id={`iv-amount-${par}`}
-                          />
-                          <label className="invest-amount-label" htmlFor={`iv-amount-${par}`}>
-                            {currency === "btc" ? Number(par).toFixed(6) : par} {currency.toUpperCase()}
-                          </label>
-                        </div>
-                      ))}
-                    </div>
+                    {
+                      //   <div className="form-label-group">
+                      //     <label className="form-label">Enter Your Amount</label>
+                      //     <UncontrolledDropdown>
+                      //       {
+                      //         //   <DropdownToggle
+                      //         //     tag="a"
+                      //         //     onClick={(ev) => ev.preventDefault()}
+                      //         //     href="#toggle"
+                      //         //     className="link py-1"
+                      //         //   >
+                      //         //     Change Currency
+                      //         //   </DropdownToggle>
+                      //       }
+                      //       <DropdownMenu end className="dropdown-menu-xxs">
+                      //         <ul className="link-list-plain sm text-center">
+                      //           <li>
+                      //             <DropdownItem
+                      //               tag="a"
+                      //               href="#toggle"
+                      //               onClick={(ev) => {
+                      //                 ev.preventDefault();
+                      //                 setCurrency("eur");
+                      //                 setRangVal(`${returnCurrency("eur", currentPlan.minDeposit).value}`);
+                      //                 setSliderVal(`${returnCurrency("eur", currentPlan.minDeposit).value}`);
+                      //               }}
+                      //             >
+                      //               BTC
+                      //             </DropdownItem>
+                      //           </li>
+                      //           <li>
+                      //             <DropdownItem
+                      //               tag="a"
+                      //               href="#toggle"
+                      //               onClick={(ev) => {
+                      //                 ev.preventDefault();
+                      //                 setCurrency("btc");
+                      //                 setRangVal(`${returnCurrency("btc", currentPlan.minDeposit).value}`);
+                      //                 setSliderVal(`${returnCurrency("btc", currentPlan.minDeposit).value}`);
+                      //               }}
+                      //             >
+                      //               LTC
+                      //             </DropdownItem>
+                      //           </li>
+                      //           <li>
+                      //             <DropdownItem
+                      //               tag="a"
+                      //               href="#toggle"
+                      //               onClick={(ev) => {
+                      //                 ev.preventDefault();
+                      //                 setCurrency("eth");
+                      //                 setRangVal(`${returnCurrency("eth", currentPlan.minDeposit).value}`);
+                      //                 setSliderVal(`${returnCurrency("eth", currentPlan.minDeposit).value}`);
+                      //               }}
+                      //             >
+                      //               ETH
+                      //             </DropdownItem>
+                      //           </li>
+                      //         </ul>
+                      //       </DropdownMenu>
+                      //     </UncontrolledDropdown>
+                      //   </div>
+                    }
+                    {
+                      //   <div className="form-control-group">
+                      //     <input
+                      //       type="text"
+                      //       className="form-control form-control-amount form-control-lg"
+                      //       id="custom-amount"
+                      //       value={currency === "btc" ? Number(rangeVal).toFixed(6) : Number(rangeVal).toFixed(0)}
+                      //       onChange={(e) => {
+                      //         setRangVal(e.target.value);
+                      //         setSliderVal(e.target.value);
+                      //         onValChange(e.target.value);
+                      //       }}
+                      //     />
+                      //     <Nouislider
+                      //       className="form-range-slider"
+                      //       range={{
+                      //         min: 200,
+                      //         max: 5000,
+                      //       }}
+                      //       start={Number(sliderVal)}
+                      //       behaviour="tap"
+                      //       connect={[true, false]}
+                      //       onChange={(val) => {
+                      //         onValChange(val[0]);
+                      //       }}
+                      //       onSlide={(val) => setRangVal(val[0])}
+                      //     />
+                      //   </div>
+                    }
+                    {
+                      <div className="form-note pt-2">
+                        {
+                          //     `Note: Minimum invest ${returnCurrency(currency, currentPlan.minDeposit).value} ${
+                          //   returnCurrency(currency, currentPlan.minDeposit, true).label
+                          // } and upto ${returnCurrency(currency, currentPlan.maxDeposit).value} ${
+                          //   returnCurrency(currency, currentPlan.maxDeposit, true).label
+                          // }`
+                        }
+                      </div>
+                    }
                   </div>
                   <div className="form-group invest-field">
                     <div className="form-label-group">
-                      <label className="form-label">Or Enter Your Amount</label>
-                      <UncontrolledDropdown>
-                        <DropdownToggle
-                          tag="a"
-                          onClick={(ev) => ev.preventDefault()}
-                          href="#toggle"
-                          className="link py-1"
-                        >
-                          Change Currency
-                        </DropdownToggle>
-
-                        <DropdownMenu end className="dropdown-menu-xxs">
-                          <ul className="link-list-plain sm text-center">
-                            <li>
-                              <DropdownItem
-                                tag="a"
-                                href="#toggle"
-                                onClick={(ev) => {
-                                  ev.preventDefault();
-                                  setCurrency("usd");
-                                  setRangVal(`${returnCurrency("usd", currentPlan.minDeposit).value}`);
-                                  setSliderVal(`${returnCurrency("usd", currentPlan.minDeposit).value}`);
-                                }}
-                              >
-                                USD
-                              </DropdownItem>
-                            </li>
-                            <li>
-                              <DropdownItem
-                                tag="a"
-                                href="#toggle"
-                                onClick={(ev) => {
-                                  ev.preventDefault();
-                                  setCurrency("eur");
-                                  setRangVal(`${returnCurrency("eur", currentPlan.minDeposit).value}`);
-                                  setSliderVal(`${returnCurrency("eur", currentPlan.minDeposit).value}`);
-                                }}
-                              >
-                                EUR
-                              </DropdownItem>
-                            </li>
-                            <li>
-                              <DropdownItem
-                                tag="a"
-                                href="#toggle"
-                                onClick={(ev) => {
-                                  ev.preventDefault();
-                                  setCurrency("btc");
-                                  setRangVal(`${returnCurrency("btc", currentPlan.minDeposit).value}`);
-                                  setSliderVal(`${returnCurrency("btc", currentPlan.minDeposit).value}`);
-                                }}
-                              >
-                                BTC
-                              </DropdownItem>
-                            </li>
-                            <li>
-                              <DropdownItem
-                                tag="a"
-                                href="#toggle"
-                                onClick={(ev) => {
-                                  ev.preventDefault();
-                                  setCurrency("eth");
-                                  setRangVal(`${returnCurrency("eth", currentPlan.minDeposit).value}`);
-                                  setSliderVal(`${returnCurrency("eth", currentPlan.minDeposit).value}`);
-                                }}
-                              >
-                                ETH
-                              </DropdownItem>
-                            </li>
-                          </ul>
-                        </DropdownMenu>
-                      </UncontrolledDropdown>
-                    </div>
-                    <div className="form-control-group">
-                      <div className="form-info">{currency.toUpperCase()}</div>
-                      <input
-                        type="text"
-                        className="form-control form-control-amount form-control-lg"
-                        id="custom-amount"
-                        value={currency === "btc" ? Number(rangeVal).toFixed(6) : Number(rangeVal).toFixed(0)}
-                        onChange={(e) => {
-                          setRangVal(e.target.value);
-                          setSliderVal(e.target.value);
-                          onValChange(e.target.value);
-                        }}
-                      />
-                      <Nouislider
-                        className="form-range-slider"
-                        range={{
-                          min: Number(returnCurrency(currency, currentPlan.minDeposit).value),
-                          max: Number(returnCurrency(currency, currentPlan.maxDeposit).value),
-                        }}
-                        start={Number(sliderVal)}
-                        behaviour="tap"
-                        connect={[true, false]}
-                        onChange={(val) => {
-                          onValChange(val[0]);
-                        }}
-                        onSlide={(val) => setRangVal(val[0])}
-                      />
-                    </div>
-                    <div className="form-note pt-2">{`Note: Minimum invest ${
-                      returnCurrency(currency, currentPlan.minDeposit).value
-                    } ${returnCurrency(currency, currentPlan.minDeposit, true).label} and upto ${
-                      returnCurrency(currency, currentPlan.maxDeposit).value
-                    } ${returnCurrency(currency, currentPlan.maxDeposit, true).label}`}</div>
-                  </div>
-                  <div className="form-group invest-field">
-                    <div className="form-label-group">
-                      <label className="form-label">Choose Payment Method</label>
+                      {<label className="form-label">Pick a Payment Method</label>}
                     </div>
                     <input type="hidden" defaultValue="wallet" name="iv-wallet" id="invest-choose-wallet" />
                     <UncontrolledDropdown className="invest-cc-dropdown">
@@ -339,15 +341,20 @@ const InvestmentProcess = ({ match }) => {
                             <Icon name="offer-fill"></Icon>
                           </div>
                           <div className="coin-info">
-                            <span className="coin-name">{wallet.label}</span>
-                            <span className="coin-text">Current balance: {wallet.value}</span>
+                            <span>Payment Methods</span>
                           </div>
                         </div>
                       </DropdownToggle>
                       <DropdownMenu className="dropdown-menu-auto dropdown-menu-mxh">
                         <li
                           className={`invest-cc-item`}
-                          onClick={() => setWallet({ label: "NioWallet", value: "2.014095 BTC ( $18,934.84 )" })}
+                          onClick={() =>
+                            setPaymentMethod({
+                              label: "LTC",
+                              amount: "",
+                              address: "LcHKNgZWLzL81kK6a63S9Pp7Vd2tR8NQqV",
+                            })
+                          }
                         >
                           <DropdownItem
                             tag="a"
@@ -360,15 +367,28 @@ const InvestmentProcess = ({ match }) => {
                                 <Icon name="offer-fill"></Icon>
                               </div>
                               <div className="coin-info">
-                                <span className="coin-name">Nio</span>
-                                <span className="coin-text">Current balance : 2.014095 BTC ( $18,934.84 )</span>
+                                <span className="coin-name">LTC</span>
+                                <span className="coin-text">Address : LcHKNgZWLzL81kK6a63S9Pp7Vd2tR8NQqV</span>
+                                <span>
+                                  <img
+                                    style={{ width: 150, height: 150, objectFit: "cover" }}
+                                    alt=""
+                                    src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg"
+                                  />
+                                </span>
                               </div>
                             </div>
                           </DropdownItem>
                         </li>
                         <li
                           className="invest-cc-item"
-                          onClick={() => setWallet({ label: "BTC Wallet", value: " 2.014095 BTC" })}
+                          onClick={() =>
+                            setPaymentMethod({
+                              label: "BTC",
+                              amount: "",
+                              address: "1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa",
+                            })
+                          }
                         >
                           <DropdownItem
                             tag="a"
@@ -382,14 +402,27 @@ const InvestmentProcess = ({ match }) => {
                               </div>
                               <div className="coin-info">
                                 <span className="coin-name">BTC</span>
-                                <span className="coin-text">Current balance : 2.014095 BTC</span>
+                                <span className="coin-text">Address : 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa</span>
+                                <span>
+                                  <img
+                                    style={{ width: 150, height: 150, objectFit: "cover" }}
+                                    alt=""
+                                    src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg"
+                                  />
+                                </span>
                               </div>
                             </div>
                           </DropdownItem>
                         </li>
                         <li
                           className="invest-cc-item"
-                          onClick={() => setWallet({ label: "USD Wallet", value: " $18,934.84" })}
+                          onClick={() =>
+                            setPaymentMethod({
+                              label: "ETH",
+                              amount: "",
+                              address: "0x32be343b94f860124dc4fee278fdcbd38c102d88",
+                            })
+                          }
                         >
                           <DropdownItem
                             tag="a"
@@ -402,8 +435,15 @@ const InvestmentProcess = ({ match }) => {
                                 <Icon name="offer-fill"></Icon>
                               </div>
                               <div className="coin-info">
-                                <span className="coin-name">USDT</span>
-                                <span className="coin-text">Current balance : $18,934.84</span>
+                                <span className="coin-name">ETH</span>
+                                <span className="coin-text">Address : 0x32Be343B94f860124dC4fEe278FDCBD38C102D88</span>
+                                <span>
+                                  <img
+                                    style={{ width: 150, height: 150, objectFit: "cover" }}
+                                    alt=""
+                                    src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg"
+                                  />
+                                </span>
                               </div>
                             </div>
                           </DropdownItem>
@@ -525,6 +565,15 @@ const InvestmentProcess = ({ match }) => {
                           //   </ul>
                           // </div>
                         }
+                        <input
+                          type="text"
+                          className="form-control form-control-amount form-control-lg"
+                          style={{ borderRadius: 0 }}
+                          id="custom-amount"
+                          placeholder="Enter Hash ID to Finalize Payment"
+                          //   value={}
+                          onChange={(e) => {}}
+                        />
                         <div className="nk-iv-wg4-sub text-center bg-lighter">
                           <Button size="lg" color="primary" className="ttu" onClick={() => toggleModal()}>
                             {" "}
@@ -549,8 +598,8 @@ const InvestmentProcess = ({ match }) => {
                     <strong>
                       {rangeVal} {currency.toUpperCase()}
                     </strong>{" "}
-                    on this order #93033939 using your <strong>{wallet.label}</strong>. Please enter your Wallet Pin
-                    code in order complete the payment or cancel.
+                    on this order #93033939 using your <strong>{paymentMethod.label}</strong>. Please enter your Wallet
+                    Pin code in order complete the payment or cancel.
                   </p>
                 </div>
                 <div className="nk-modal-form">
@@ -599,7 +648,7 @@ const InvestmentProcess = ({ match }) => {
                     <strong>
                       {rangeVal} {currency.toUpperCase()}
                     </strong>{" "}
-                    using your <strong>{wallet.label}</strong>.
+                    using your <strong>{paymentMethod.label}</strong>.
                   </p>
                 </div>
                 <div className="nk-modal-action-lg">
