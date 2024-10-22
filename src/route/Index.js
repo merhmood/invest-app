@@ -116,6 +116,7 @@ import GoogleMapPage from "../pages/components/misc/GoogleMap";
 import { FileManagerContextProvider } from "../pages/app/file-manager/FileManagerContext";
 import TransactionTable from "../components/partials/default/transaction/Transaction";
 import WalletProcess from "../pages/panel/invest/pages/WalletProcess";
+import WithdrawalProcess from "../pages/panel/invest/pages/WithdrawalProcess";
 
 const Pages = () => {
   useLayoutEffect(() => {
@@ -137,6 +138,7 @@ const Pages = () => {
         <Route exact path={`${process.env.PUBLIC_URL}/invest`} component={Overview}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/invest/index`} component={Overview}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/invest/wallet-form`} component={WalletProcess}></Route>
+        <Route exact path={`${process.env.PUBLIC_URL}/invest/withdrawal`} component={WithdrawalProcess}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/invest/schemes`} component={Plan}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/invest/transactions`} component={TransactionTable}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/invest/profile`} component={Profile}></Route>

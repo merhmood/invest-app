@@ -239,9 +239,11 @@ const Overview = () => {
                   </div>
                   <div className="nk-iv-wg2-cta">
                     <Button className="btn-block" color="primary" size="lg">
-                      {" "}
-                      Withdraw Funds
+                      <Link to={`${process.env.PUBLIC_URL}/invest/withdrawal`} className="btn-block">
+                        <span style={{ color: "white" }}>Withdraw Funds</span>
+                      </Link>
                     </Button>
+
                     <Link to={`${process.env.PUBLIC_URL}/invest/wallet-form`} className="btn btn-trans btn-block">
                       Deposit Funds
                     </Link>

@@ -28,7 +28,7 @@ import {
   Icon,
 } from "../../../../components/Component";
 
-const WalletProcess = ({ match }) => {
+const WithdrawalProcess = ({ match }) => {
   const [currentPlan, setCurrentPlan] = useState();
   const [currency, setCurrency] = useState("usd");
   const [rangeVal, setRangVal] = useState(100);
@@ -125,7 +125,7 @@ const WalletProcess = ({ match }) => {
             }
             <BlockHeadContent>
               <BlockTitle tag="h2" className="fw-normal">
-                Add Funds to Wallet
+                Withdraw Funds
               </BlockTitle>
             </BlockHeadContent>
           </BlockHead>
@@ -342,7 +342,7 @@ const WalletProcess = ({ match }) => {
                   </div>
                   <div className="form-group invest-field">
                     <div className="form-label-group">
-                      {<label className="form-label">Pick a Payment Method</label>}
+                      {<label className="form-label">Pick a Withdrawal Method</label>}
                     </div>
                     <input type="hidden" defaultValue="wallet" name="iv-wallet" id="invest-choose-wallet" />
                     <UncontrolledDropdown className="invest-cc-dropdown">
@@ -565,16 +565,6 @@ const WalletProcess = ({ match }) => {
           <Modal isOpen={modal} toggle={() => toggleModal()} className="modal-dialog-centered" size="lg">
             <ModalBody className="modal-body-md text-center">
               <div className="nk-modal">
-                <div className="nk-modal-text">
-                  <span className="coin-text">Address : 0x32Be343B94f860124dC4fEe278FDCBD38C102D88</span>
-                  <span>
-                    <img
-                      style={{ width: 150, height: 150, objectFit: "cover" }}
-                      alt=""
-                      src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg"
-                    />
-                  </span>
-                </div>
                 <div className="nk-modal-form">
                   <div className="form-group">
                     <input
@@ -582,7 +572,7 @@ const WalletProcess = ({ match }) => {
                       className="form-control form-control-amount form-control-lg"
                       style={{ borderRadius: 0 }}
                       id="custom-amount"
-                      placeholder="Enter Hash ID"
+                      placeholder="Enter Wallet Address"
                       //   value={}
                       onChange={(e) => {}}
                     />
@@ -599,7 +589,7 @@ const WalletProcess = ({ match }) => {
                       togglePaymentDoneModal();
                     }}
                   >
-                    Confirm Payment
+                    Withdraw
                   </Button>
                   <a
                     style={{ marginLeft: 45 }}
@@ -627,7 +617,7 @@ const WalletProcess = ({ match }) => {
               <div className="nk-modal">
                 <div className="nk-modal-text">
                   <span className="coin-text" style={{ fontSize: 20, color: "green" }}>
-                    Payment Was Successful
+                    Withdrawal Was Successful
                   </span>
                 </div>
                 <div className="nk-modal-action">
@@ -651,4 +641,4 @@ const WalletProcess = ({ match }) => {
   );
 };
 
-export default WalletProcess;
+export default WithdrawalProcess;
