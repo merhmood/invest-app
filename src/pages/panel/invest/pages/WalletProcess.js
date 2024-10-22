@@ -313,7 +313,7 @@ const InvestmentProcess = ({ match }) => {
                       //   </div>
                     }
                     {
-                      <div className="form-note pt-2">
+                      <div className="form-note">
                         {
                           //     `Note: Minimum invest ${returnCurrency(currency, currentPlan.minDeposit).value} ${
                           //   returnCurrency(currency, currentPlan.minDeposit, true).label
@@ -341,7 +341,7 @@ const InvestmentProcess = ({ match }) => {
                             <Icon name="offer-fill"></Icon>
                           </div>
                           <div className="coin-info">
-                            <span>Payment Methods</span>
+                            <span>{paymentMethod.label}</span>
                           </div>
                         </div>
                       </DropdownToggle>
@@ -351,8 +351,6 @@ const InvestmentProcess = ({ match }) => {
                           onClick={() =>
                             setPaymentMethod({
                               label: "LTC",
-                              amount: "",
-                              address: "LcHKNgZWLzL81kK6a63S9Pp7Vd2tR8NQqV",
                             })
                           }
                         >
@@ -368,14 +366,6 @@ const InvestmentProcess = ({ match }) => {
                               </div>
                               <div className="coin-info">
                                 <span className="coin-name">LTC</span>
-                                <span className="coin-text">Address : LcHKNgZWLzL81kK6a63S9Pp7Vd2tR8NQqV</span>
-                                <span>
-                                  <img
-                                    style={{ width: 150, height: 150, objectFit: "cover" }}
-                                    alt=""
-                                    src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg"
-                                  />
-                                </span>
                               </div>
                             </div>
                           </DropdownItem>
@@ -385,8 +375,6 @@ const InvestmentProcess = ({ match }) => {
                           onClick={() =>
                             setPaymentMethod({
                               label: "BTC",
-                              amount: "",
-                              address: "1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa",
                             })
                           }
                         >
@@ -402,14 +390,6 @@ const InvestmentProcess = ({ match }) => {
                               </div>
                               <div className="coin-info">
                                 <span className="coin-name">BTC</span>
-                                <span className="coin-text">Address : 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa</span>
-                                <span>
-                                  <img
-                                    style={{ width: 150, height: 150, objectFit: "cover" }}
-                                    alt=""
-                                    src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg"
-                                  />
-                                </span>
                               </div>
                             </div>
                           </DropdownItem>
@@ -419,8 +399,6 @@ const InvestmentProcess = ({ match }) => {
                           onClick={() =>
                             setPaymentMethod({
                               label: "ETH",
-                              amount: "",
-                              address: "0x32be343b94f860124dc4fee278fdcbd38c102d88",
                             })
                           }
                         >
@@ -436,14 +414,6 @@ const InvestmentProcess = ({ match }) => {
                               </div>
                               <div className="coin-info">
                                 <span className="coin-name">ETH</span>
-                                <span className="coin-text">Address : 0x32Be343B94f860124dC4fEe278FDCBD38C102D88</span>
-                                <span>
-                                  <img
-                                    style={{ width: 150, height: 150, objectFit: "cover" }}
-                                    alt=""
-                                    src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg"
-                                  />
-                                </span>
                               </div>
                             </div>
                           </DropdownItem>
@@ -462,128 +432,116 @@ const InvestmentProcess = ({ match }) => {
                       </label>
                     </div>
                   </div>
-                </Col>
-                {
-                  <Col xl="4" lg="5" className="offset-xl-1">
-                    <Card className="card-bordered ms-lg-4 ms-xl-0">
-                      <div className="nk-iv-wg4">
-                        {
-                          //     <div className="nk-iv-wg4-sub">
-                          //   <h6 className="nk-iv-wg4-title title">Your Investment Details</h6>
-                          //   <ul className="nk-iv-wg4-overview g-2">
-                          //     <li>
-                          //       <div className="sub-text">Name of scheme</div>
-                          //       <div className="lead-text">{currentPlan.title} Plan</div>
-                          //     </li>
-                          //     <li>
-                          //       <div className="sub-text">Term of the scheme</div>
-                          //       <div className="lead-text">{currentPlan.term} days</div>
-                          //     </li>
-                          //     <li>
-                          //       <div className="sub-text">Daily profit</div>
-                          //       <div className="lead-text">
-                          //         {calculateProfitReturns(currentPlan.interest, currentPlan.term, rangeVal).dailyProfit}{" "}
-                          //         {currency.toUpperCase()}
-                          //       </div>
-                          //     </li>
-                          //     <li>
-                          //       <div className="sub-text">Daily profit %</div>
-                          //       <div className="lead-text">{currentPlan.interest} %</div>
-                          //     </li>
-                          //     <li>
-                          //       <div className="sub-text">Total net profit</div>
-                          //       <div className="lead-text">
-                          //         {
-                          //           calculateProfitReturns(currentPlan.interest, currentPlan.term, rangeVal)
-                          //             .totalNetProfit
-                          //         }{" "}
-                          //         {currency.toUpperCase()}
-                          //       </div>
-                          //     </li>
-                          //     <li>
-                          //       <div className="sub-text">Total Return</div>
-                          //       <div className="lead-text">
-                          //         {calculateProfitReturns(currentPlan.interest, currentPlan.term, rangeVal).totalReturn}{" "}
-                          //         {currency.toUpperCase()}
-                          //       </div>
-                          //     </li>
-                          //     <li>
-                          //       <div className="sub-text">Term start at</div>
-                          //       <div className="lead-text">Today ({dateFormatterAlt(new Date(), true)})</div>
-                          //     </li>
-                          //     <li>
-                          //       <div className="sub-text">Term end at</div>
-                          //       <div className="lead-text">
-                          //         {dateFormatterAlt(addDays(new Date(), currentPlan.term), true)}
-                          //       </div>
-                          //     </li>
-                          //   </ul>
-                          // </div>
-                          // <div className="nk-iv-wg4-sub">
-                          //   <ul className="nk-iv-wg4-list">
-                          //     <li>
-                          //       <div className="sub-text">Payment Method</div>
-                          //       <div className="lead-text">{wallet.label}</div>
-                          //     </li>
-                          //   </ul>
-                          // </div>
-                          // <div className="nk-iv-wg4-sub">
-                          //   <ul className="nk-iv-wg4-list">
-                          //     <li>
-                          //       <div className="sub-text">Amount to invest</div>
-                          //       <div className="lead-text">
-                          //         {" "}
-                          //         {currency === "btc" ? Number(rangeVal).toFixed(6) : Number(rangeVal).toFixed(2)}{" "}
-                          //         {currency.toUpperCase()}
-                          //       </div>
-                          //     </li>
-                          //     <li>
-                          //       <div className="sub-text">
-                          //         Conversion Fee <span>(0.5%)</span>
-                          //       </div>
-                          //       <div className="lead-text">
-                          //         {" "}
-                          //         {currency === "btc"
-                          //           ? (rangeVal * 0.005).toFixed(6)
-                          //           : (rangeVal * 0.005).toFixed(2)}{" "}
-                          //         {currency.toUpperCase()}
-                          //       </div>
-                          //     </li>
-                          //   </ul>
-                          // </div>
-                          // <div className="nk-iv-wg4-sub">
-                          //   <ul className="nk-iv-wg4-list">
-                          //     <li>
-                          //       <div className="lead-text">Total Charge</div>
-                          //       <div className="caption-text text-primary">
-                          //         {currency === "btc"
-                          //           ? calculateConversionFee(rangeVal, 0.5).toFixed(6)
-                          //           : calculateConversionFee(rangeVal, 0.5).toFixed(2)}{" "}
-                          //         {currency.toUpperCase()}
-                          //       </div>
-                          //     </li>
-                          //   </ul>
-                          // </div>
-                        }
-                        <input
-                          type="text"
-                          className="form-control form-control-amount form-control-lg"
-                          style={{ borderRadius: 0 }}
-                          id="custom-amount"
-                          placeholder="Enter Hash ID to Finalize Payment"
-                          //   value={}
-                          onChange={(e) => {}}
-                        />
-                        <div className="nk-iv-wg4-sub text-center bg-lighter">
-                          <Button size="lg" color="primary" className="ttu" onClick={() => toggleModal()}>
-                            {" "}
-                            Confirm &amp; proceed
-                          </Button>
-                        </div>
+                  <Card className="card-bordered ms-lg-4 ms-xl-0">
+                    <div className="nk-iv-wg4">
+                      {
+                        //     <div className="nk-iv-wg4-sub">
+                        //   <h6 className="nk-iv-wg4-title title">Your Investment Details</h6>
+                        //   <ul className="nk-iv-wg4-overview g-2">
+                        //     <li>
+                        //       <div className="sub-text">Name of scheme</div>
+                        //       <div className="lead-text">{currentPlan.title} Plan</div>
+                        //     </li>
+                        //     <li>
+                        //       <div className="sub-text">Term of the scheme</div>
+                        //       <div className="lead-text">{currentPlan.term} days</div>
+                        //     </li>
+                        //     <li>
+                        //       <div className="sub-text">Daily profit</div>
+                        //       <div className="lead-text">
+                        //         {calculateProfitReturns(currentPlan.interest, currentPlan.term, rangeVal).dailyProfit}{" "}
+                        //         {currency.toUpperCase()}
+                        //       </div>
+                        //     </li>
+                        //     <li>
+                        //       <div className="sub-text">Daily profit %</div>
+                        //       <div className="lead-text">{currentPlan.interest} %</div>
+                        //     </li>
+                        //     <li>
+                        //       <div className="sub-text">Total net profit</div>
+                        //       <div className="lead-text">
+                        //         {
+                        //           calculateProfitReturns(currentPlan.interest, currentPlan.term, rangeVal)
+                        //             .totalNetProfit
+                        //         }{" "}
+                        //         {currency.toUpperCase()}
+                        //       </div>
+                        //     </li>
+                        //     <li>
+                        //       <div className="sub-text">Total Return</div>
+                        //       <div className="lead-text">
+                        //         {calculateProfitReturns(currentPlan.interest, currentPlan.term, rangeVal).totalReturn}{" "}
+                        //         {currency.toUpperCase()}
+                        //       </div>
+                        //     </li>
+                        //     <li>
+                        //       <div className="sub-text">Term start at</div>
+                        //       <div className="lead-text">Today ({dateFormatterAlt(new Date(), true)})</div>
+                        //     </li>
+                        //     <li>
+                        //       <div className="sub-text">Term end at</div>
+                        //       <div className="lead-text">
+                        //         {dateFormatterAlt(addDays(new Date(), currentPlan.term), true)}
+                        //       </div>
+                        //     </li>
+                        //   </ul>
+                        // </div>
+                        // <div className="nk-iv-wg4-sub">
+                        //   <ul className="nk-iv-wg4-list">
+                        //     <li>
+                        //       <div className="sub-text">Payment Method</div>
+                        //       <div className="lead-text">{wallet.label}</div>
+                        //     </li>
+                        //   </ul>
+                        // </div>
+                        // <div className="nk-iv-wg4-sub">
+                        //   <ul className="nk-iv-wg4-list">
+                        //     <li>
+                        //       <div className="sub-text">Amount to invest</div>
+                        //       <div className="lead-text">
+                        //         {" "}
+                        //         {currency === "btc" ? Number(rangeVal).toFixed(6) : Number(rangeVal).toFixed(2)}{" "}
+                        //         {currency.toUpperCase()}
+                        //       </div>
+                        //     </li>
+                        //     <li>
+                        //       <div className="sub-text">
+                        //         Conversion Fee <span>(0.5%)</span>
+                        //       </div>
+                        //       <div className="lead-text">
+                        //         {" "}
+                        //         {currency === "btc"
+                        //           ? (rangeVal * 0.005).toFixed(6)
+                        //           : (rangeVal * 0.005).toFixed(2)}{" "}
+                        //         {currency.toUpperCase()}
+                        //       </div>
+                        //     </li>
+                        //   </ul>
+                        // </div>
+                        // <div className="nk-iv-wg4-sub">
+                        //   <ul className="nk-iv-wg4-list">
+                        //     <li>
+                        //       <div className="lead-text">Total Charge</div>
+                        //       <div className="caption-text text-primary">
+                        //         {currency === "btc"
+                        //           ? calculateConversionFee(rangeVal, 0.5).toFixed(6)
+                        //           : calculateConversionFee(rangeVal, 0.5).toFixed(2)}{" "}
+                        //         {currency.toUpperCase()}
+                        //       </div>
+                        //     </li>
+                        //   </ul>
+                        // </div>
+                      }
+                      <div className="nk-iv-wg4-sub text-center bg-lighter">
+                        <Button size="lg" color="primary" className="ttu" onClick={() => toggleModal()}>
+                          {" "}
+                          Confirm &amp; proceed
+                        </Button>
                       </div>
-                    </Card>
-                  </Col>
-                }
+                    </div>
+                  </Card>
+                </Col>
+                {<Col xl="4" lg="5" className="offset-xl-1"></Col>}
               </Row>
             </form>
           </Block>
@@ -591,20 +549,27 @@ const InvestmentProcess = ({ match }) => {
           <Modal isOpen={modal} toggle={() => toggleModal()} className="modal-dialog-centered" size="lg">
             <ModalBody className="modal-body-md text-center">
               <div className="nk-modal">
-                <h4 className="nk-modal-title">Confirm Password</h4>
                 <div className="nk-modal-text">
-                  <p>
-                    To confirm your payment of{" "}
-                    <strong>
-                      {rangeVal} {currency.toUpperCase()}
-                    </strong>{" "}
-                    on this order #93033939 using your <strong>{paymentMethod.label}</strong>. Please enter your Wallet
-                    Pin code in order complete the payment or cancel.
-                  </p>
+                  <span className="coin-text">Address : 0x32Be343B94f860124dC4fEe278FDCBD38C102D88</span>
+                  <span>
+                    <img
+                      style={{ width: 150, height: 150, objectFit: "cover" }}
+                      alt=""
+                      src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg"
+                    />
+                  </span>
                 </div>
                 <div className="nk-modal-form">
                   <div className="form-group">
-                    <input type="password" className="form-control form-control-password-big text-center" />
+                    <input
+                      type="text"
+                      className="form-control form-control-amount form-control-lg"
+                      style={{ borderRadius: 0 }}
+                      id="custom-amount"
+                      placeholder="Enter Hash ID"
+                      //   value={}
+                      onChange={(e) => {}}
+                    />
                   </div>
                 </div>
                 <div className="nk-modal-action">
@@ -619,10 +584,8 @@ const InvestmentProcess = ({ match }) => {
                   >
                     Confirm Payment
                   </Button>
-                  <div className="sub-text sub-text-alt mt-3 mb-4">
-                    This transaction will appear on your wallet statement as Invest * {currentPlan.title.toUpperCase()}.
-                  </div>
                   <a
+                    style={{ marginLeft: 45 }}
                     href="#close"
                     onClick={(ev) => {
                       ev.preventDefault();
@@ -635,52 +598,6 @@ const InvestmentProcess = ({ match }) => {
                 </div>
               </div>
             </ModalBody>
-          </Modal>
-
-          <Modal isOpen={confirmModal} toggle={() => toggleConfirmModal()} className="modal-dialog-centered" size="lg">
-            <ModalBody className="modal-body-lg text-center">
-              <div className="nk-modal">
-                <Icon name="check" className="nk-modal-icon icon-circle icon-circle-xxl bg-success" />
-                <h4 className="nk-modal-title">Successfully Payment</h4>
-                <div className="nk-modal-text">
-                  <p className="sub-text">
-                    You have successfully order the Investment Plan of {currentPlan.title} with amount of{" "}
-                    <strong>
-                      {rangeVal} {currency.toUpperCase()}
-                    </strong>{" "}
-                    using your <strong>{paymentMethod.label}</strong>.
-                  </p>
-                </div>
-                <div className="nk-modal-action-lg">
-                  <ul className="btn-group flex-wrap justify-center g-4">
-                    <li>
-                      <Link to={`${process.env.PUBLIC_URL}/invest/invest`} className="btn btn-lg btn-mw btn-primary">
-                        More Invest
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to={`${process.env.PUBLIC_URL}/invest/scheme-details/${currentPlan.id}`}
-                        className="btn btn-lg btn-mw btn-dim btn-primary"
-                      >
-                        <Icon name="reports"></Icon>
-                        <span>See the plan</span>
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </ModalBody>
-            <ModalFooter className="bg-lighter">
-              <div className="text-center w-100">
-                <p>
-                  Earn upto $25 for each friend your refer!{" "}
-                  <a href="#tag" onClick={(ev) => ev.preventDefault()}>
-                    Invite friends
-                  </a>
-                </p>
-              </div>
-            </ModalFooter>
           </Modal>
         </Content>
       )}
