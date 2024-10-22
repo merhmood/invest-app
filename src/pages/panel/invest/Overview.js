@@ -287,7 +287,9 @@ const Overview = () => {
                   </div>
                   <div className="nk-iv-wg2-cta">
                     <Button className="btn-block" color="primary" size="lg">
-                      Invest &amp; Earn
+                      <Link to={`${process.env.PUBLIC_URL}/invest/invest`} className="btn-block">
+                        <span style={{ color: "white" }}>Invest &amp; Earn</span>
+                      </Link>
                     </Button>
                     <div className="cta-extra">
                       Earn up to 25${" "}
