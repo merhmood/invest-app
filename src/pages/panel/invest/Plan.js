@@ -19,43 +19,55 @@ import { ProfitCharts } from "../../../components/partials/charts/panel/PanelCha
 const Plan = () => {
   return (
     <React.Fragment>
-      <Head title="Investment Scheme"></Head>
+      <Head title="Investments"></Head>
       <Content size="lg">
         <BlockHead>
           <BlockHeadContent>
-            <BlockHeadSub>My Plan</BlockHeadSub>
+            <BlockHeadSub>My Investments</BlockHeadSub>
             <BlockBetween size="md" className="g-4">
               <BlockHeadContent>
                 <BlockTitle tag="h2" className="fw-normal">
-                  Invested Schemes
+                  Investments
                 </BlockTitle>
                 <BlockDes>
-                  <p>Here is your current balance and your active investement plans.</p>
+                  <p>Here is your current balance and your active investements.</p>
                 </BlockDes>
               </BlockHeadContent>
               <BlockHeadContent>
                 <ul className="nk-block-tools gx-3">
                   <li>
-                    <Button color="primary">
-                      <span>Withdraw</span> <Icon name="arrow-long-right" className="d-none d-sm-inline-block"></Icon>
-                    </Button>
+                    <Link to={`${process.env.PUBLIC_URL}/invest/withdrawal`} className="btn-block">
+                      <Button color="primary">
+                        <span style={{ color: "white" }}>Withdraw</span>{" "}
+                        <Icon
+                          style={{ color: "white" }}
+                          name="arrow-long-right"
+                          className="d-none d-sm-inline-block"
+                        ></Icon>
+                      </Button>
+                    </Link>
                   </li>
                   <li>
-                    <Button color="white" className="btn-light">
-                      <span>Invest More</span>{" "}
-                      <Icon name="arrow-long-right" className="d-none d-sm-inline-block"></Icon>
-                    </Button>
+                    <Link to={`${process.env.PUBLIC_URL}/invest/invest`} className="btn-block">
+                      <Button color="white" className="btn-light">
+                        {" "}
+                        <span style={{ color: "black" }}> Invest More</span>
+                        <Icon name="arrow-long-right" className="d-none d-sm-inline-block"></Icon>
+                      </Button>
+                    </Link>
                   </li>
                   <li className="opt-menu-md">
                     <UncontrolledDropdown>
-                      <DropdownToggle
-                        className="btn btn-white btn-light btn-icon"
-                        tag="a"
-                        href="#toggle"
-                        onClick={(ev) => ev.preventDefault()}
-                      >
-                        <Icon name="setting"></Icon>
-                      </DropdownToggle>
+                      {
+                        // <DropdownToggle
+                        //   className="btn btn-white btn-light btn-icon"
+                        //   tag="a"
+                        //   href="#toggle"
+                        //   onClick={(ev) => ev.preventDefault()}
+                        // >
+                        //   <Icon name="setting"></Icon>
+                        // </DropdownToggle>
+                      }
                       <DropdownMenu end>
                         <ul className="link-list-opt no-bdr">
                           <li>
@@ -119,14 +131,15 @@ const Plan = () => {
                   </Col>
                   <Col lg="7">
                     <div className="nk-iv-wg3">
-                      <div className="nk-iv-wg3-title">
-                        This Month{" "}
-                        <TooltipComponent
-                          icon="info-fill"
-                          direction="right"
-                          text="Current Month Profit"
-                          id="month-profit"
-                        ></TooltipComponent>
+                      <div className="nk-iv-wg3-title" style={{ marginTop: 35 }}>
+                        {
+                          // <TooltipComponent
+                          //   icon="info-fill"
+                          //   direction="right"
+                          //   text="Current Month Profit"
+                          //   id="month-profit"
+                          // ></TooltipComponent>
+                        }
                       </div>
                       <div className="nk-iv-wg3-group flex-md-nowrap g-4">
                         <div className="nk-iv-wg3-sub-group gx-4">
@@ -159,25 +172,27 @@ const Plan = () => {
               <div className="card-inner">
                 <ul className="nk-iv-wg3-nav">
                   <li>
-                    <a href="#nav" onClick={(ev) => ev.preventDefault()}>
+                    <Link to={`${process.env.PUBLIC_URL}/invest/transactions`}>
                       <Icon name="notes-alt"></Icon> <span>Go to Transaction</span>
-                    </a>
+                    </Link>
                   </li>
-                  <li>
-                    <a href="#nav" onClick={(ev) => ev.preventDefault()}>
-                      <Icon name="growth"></Icon> <span>Analytic Reports</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#nav" onClick={(ev) => ev.preventDefault()}>
-                      <Icon name="report-profit"></Icon> <span>Monthly Statement</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#nav" onClick={(ev) => ev.preventDefault()}>
-                      <Icon name="help"></Icon> <span>Investment Tips</span>
-                    </a>
-                  </li>
+                  {
+                    //   <li>
+                    //   <a href="#nav" onClick={(ev) => ev.preventDefault()}>
+                    //     <Icon name="growth"></Icon> <span>Analytic Reports</span>
+                    //   </a>
+                    // </li>
+                    // <li>
+                    //   <a href="#nav" onClick={(ev) => ev.preventDefault()}>
+                    //     <Icon name="report-profit"></Icon> <span>Monthly Statement</span>
+                    //   </a>
+                    // </li>
+                    // <li>
+                    //   <a href="#nav" onClick={(ev) => ev.preventDefault()}>
+                    //     <Icon name="help"></Icon> <span>Investment Tips</span>
+                    //   </a>
+                    // </li>
+                  }
                 </ul>
               </div>
             </div>

@@ -173,6 +173,8 @@ export const returnCurrency = (currency, data, upperCase) => {
     return { value: data.usd.toFixed(2), label: upperCase ? "USD" : "$" };
   } else if (currency === "eur") {
     return { value: data.euro.toFixed(2), label: upperCase ? "EUR" : "euro" };
+  } else if (currency === "ltc") {
+    return { value: data.euro.toFixed(2), label: "LTC" };
   } else if (currency === "btc") {
     return { value: data.BTC.toFixed(6), label: "BTC" };
   } else {

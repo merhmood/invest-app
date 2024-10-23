@@ -39,7 +39,7 @@ const Overview = () => {
 
   return (
     <React.Fragment>
-      <Head title="Investment Dashboard"></Head>
+      <Head title="Dashboard"></Head>
       <Content size="lg">
         <BlockHead>
           <BlockBetween className="g-3">
@@ -53,7 +53,7 @@ const Overview = () => {
                 </div>
                 <div>
                   <Link to={`${process.env.PUBLIC_URL}/invest/schemes`} className="btn btn-white btn-light">
-                    My Plans <Icon name="arrow-long-right" className="ms-2"></Icon>
+                    My investments <Icon name="arrow-long-right" className="ms-2"></Icon>
                   </Link>
                 </div>
               </div>
@@ -67,34 +67,40 @@ const Overview = () => {
               <div className="nk-slider nk-slider-s1">
                 <Slider {...settings}>
                   <div className="nk-iv-wg1">
-                    <div className="nk-iv-wg1-sub sub-text">My Active Plans</div>
+                    <div className="nk-iv-wg1-sub sub-text">My Active Investments</div>
                     <h6 className="nk-iv-wg1-info title">Silver - 4.76% for 21 Days</h6>
                     <a href="#slide" onClick={(ev) => ev.preventDefault()} className="nk-iv-wg1-link link link-light">
-                      <Icon name="trend-up"></Icon> <span>Check Details</span>
+                      <Icon name="trend-up"></Icon>
                     </a>
-                    <div className="nk-iv-wg1-progress">
-                      <div className="progress-bar bg-primary" style={{ width: "50%" }}></div>
-                    </div>
+                    {
+                      // <div className="nk-iv-wg1-progress">
+                      //   <div className="progress-bar bg-primary" style={{ width: "50%" }}></div>
+                      // </div>
+                    }
                   </div>
                   <div className="nk-iv-wg1">
-                    <div className="nk-iv-wg1-sub sub-text">My Active Plans</div>
+                    <div className="nk-iv-wg1-sub sub-text">My Active Investments</div>
                     <h6 className="nk-iv-wg1-info title">Gold - 10.76% for 7 Days</h6>
                     <a href="#slide" onClick={(ev) => ev.preventDefault()} className="nk-iv-wg1-link link link-light">
-                      <Icon name="trend-up"></Icon> <span>Check Details</span>
+                      <Icon name="trend-up"></Icon>
                     </a>
-                    <div className="nk-iv-wg1-progress">
-                      <div className="progress-bar bg-primary" style={{ width: "20%" }}></div>
-                    </div>
+                    {
+                      // <div className="nk-iv-wg1-progress">
+                      //   <div className="progress-bar bg-primary" style={{ width: "20%" }}></div>
+                      // </div>
+                    }
                   </div>
                   <div className="nk-iv-wg1">
-                    <div className="nk-iv-wg1-sub sub-text">My Active Plans</div>
+                    <div className="nk-iv-wg1-sub sub-text">My Active Investments</div>
                     <h6 className="nk-iv-wg1-info title">Platinum - 12.76% for 30 Days</h6>
                     <a href="#slide" onClick={(ev) => ev.preventDefault()} className="nk-iv-wg1-link link link-light">
-                      <Icon name="trend-up"></Icon> <span>Check Details</span>
+                      <Icon name="trend-up"></Icon>
                     </a>
-                    <div className="nk-iv-wg1-progress">
-                      <div className="progress-bar bg-primary" style={{ width: "80%" }}></div>
-                    </div>
+                    {
+                      // <div className="nk-iv-wg1-progress">
+                      //   <div className="progress-bar bg-primary" style={{ width: "80%" }}></div>
+                      // </div>
+                    }
                   </div>
                 </Slider>
               </div>
@@ -128,7 +134,7 @@ const Overview = () => {
               <PreviewAltCard className="card-bordered is-dark nk-wg-card">
                 <div className="nk-iv-wg2">
                   <div className="nk-iv-wg2-title">
-                    <h6 className="title">Available Balance</h6>
+                    <h6 className="title">Wallet Balance</h6>
                   </div>
                   <div className="nk-iv-wg2-text">
                     <div className="nk-iv-wg2-amount">
@@ -218,7 +224,7 @@ const Overview = () => {
               <PreviewAltCard className="nk-wg-card card-bordered h-100" bodyClass="h-100">
                 <div className="nk-iv-wg2">
                   <div className="nk-iv-wg2-title">
-                    <h6 className="title">Balance in Wallet</h6>
+                    <h6 className="title">Incoming Wallet Funds</h6>
                   </div>
                   <div className="nk-iv-wg2-text">
                     <div className="nk-iv-wg2-amount ui-v2">12,587.96</div>
@@ -353,14 +359,11 @@ const Overview = () => {
                   </div>
                   <div className="nk-iv-wg2-cta">
                     <Button className="btn-block" color="light" size="lg">
-                      See all Investment
+                      <Link to={`${process.env.PUBLIC_URL}/invest/schemes`} className="btn-block">
+                        <span style={{ color: "black" }}> See all Investment</span>
+                      </Link>
                     </Button>
-                    <div className="cta-extra">
-                      Check out{" "}
-                      <a href="#link" onClick={(ev) => ev.preventDefault()} className="link link-dark">
-                        Analytic Report
-                      </a>
-                    </div>
+                    <div className="cta-extra"></div>
                   </div>
                 </div>
               </PreviewAltCard>

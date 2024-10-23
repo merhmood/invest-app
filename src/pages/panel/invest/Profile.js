@@ -92,21 +92,23 @@ const Profile = () => {
               <span>Notification</span>
             </Link>
           </li>
-          <li
-            className={`nav-item ${
-              window.location.pathname === `${process.env.PUBLIC_URL}/invest/profile-connected` ? "active" : ""
-            }`}
-          >
-            <Link
-              to={`${process.env.PUBLIC_URL}/invest/profile-connected`}
-              className={`nav-link ${
-                window.location.pathname === `${process.env.PUBLIC_URL}/invest/profile-connected` ? "active" : ""
-              }`}
-              onClick={() => setPage("Social")}
-            >
-              <span> Connect Social </span>
-            </Link>
-          </li>
+          {
+            // <li
+            //   className={`nav-item ${
+            //     window.location.pathname === `${process.env.PUBLIC_URL}/invest/profile-connected` ? "active" : ""
+            //   }`}
+            // >
+            //   <Link
+            //     to={`${process.env.PUBLIC_URL}/invest/profile-connected`}
+            //     className={`nav-link ${
+            //       window.location.pathname === `${process.env.PUBLIC_URL}/invest/profile-connected` ? "active" : ""
+            //     }`}
+            //     onClick={() => setPage("Social")}
+            //   >
+            //     <span> Connect Social </span>
+            //   </Link>
+            // </li>
+          }
         </ul>
 
         <Block>

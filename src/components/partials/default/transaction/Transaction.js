@@ -15,6 +15,7 @@ import {
 } from "reactstrap";
 import { DataTableBody, DataTableHead, DataTableItem, DataTableRow } from "../../../table/DataTable";
 import { Link } from "react-router-dom";
+import Head from "../../../../layout/head/Head";
 
 const TransactionTable = () => {
   const [data, setData] = useState(transactionData);
@@ -80,6 +81,7 @@ const TransactionTable = () => {
   return (
     <React.Fragment>
       <div className="card-inner">
+        <Head title="Transactions"></Head>
         <div className="card-title-group" style={{ marginTop: "75px" }}>
           <CardTitle>
             <h6 className="title">
@@ -130,8 +132,13 @@ const TransactionTable = () => {
           <DataTableRow>
             <span>Order No.</span>
           </DataTableRow>
+          {
+            // <DataTableRow size="sm">
+            //   <span>Wallet Address</span>
+            // </DataTableRow>
+          }
           <DataTableRow size="sm">
-            <span>Wallet Address</span>
+            <span>Type</span>
           </DataTableRow>
           <DataTableRow size="md">
             <span>Date</span>
@@ -159,10 +166,19 @@ const TransactionTable = () => {
                   <a href="#order">{item.order}</a>
                 </span>
               </DataTableRow>
+              {
+                // <DataTableRow size="sm">
+                //   <div className="user-card">
+                //     <div className="user-name">
+                //       <span className="tb-lead">{item.wallet}</span>
+                //     </div>
+                //   </div>
+                // </DataTableRow>
+              }
               <DataTableRow size="sm">
                 <div className="user-card">
                   <div className="user-name">
-                    <span className="tb-lead">{item.name}</span>
+                    <span className="tb-lead">{item.type}</span>
                   </div>
                 </div>
               </DataTableRow>
@@ -182,7 +198,7 @@ const TransactionTable = () => {
               <DataTableRow>
                 <Badge
                   className="badge-dot badge-dot-xs"
-                  color={item.status === "Paid" ? "success" : item.status === "Due" ? "warning" : "danger"}
+                  color={item.status === "Successful" ? "success" : item.status === "Pending" ? "warning" : "danger"}
                 >
                   {item.status}
                 </Badge>

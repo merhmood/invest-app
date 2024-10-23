@@ -39,7 +39,7 @@ const Investment = () => {
 
   return (
     <React.Fragment>
-      <Head title="Investment"></Head>
+      <Head title="Plans"></Head>
       <Content size="lg">
         <BlockHead className="text-center">
           <BlockHeadContent>
@@ -49,7 +49,7 @@ const Investment = () => {
           </BlockHeadContent>
           <BlockHeadContent>
             <BlockTitle className="fw-normal" tag="h2">
-              Investment Plan
+              Investment Plans
             </BlockTitle>
             <BlockDes>
               <p>Choose your investment plan and start earning.</p>
@@ -65,23 +65,11 @@ const Investment = () => {
                     href="#link"
                     onClick={(ev) => {
                       ev.preventDefault();
-                      setSelectedCurrency("usd");
+                      setSelectedCurrency("ltc");
                     }}
-                    className={`nav-link ${selectedCurrency === "usd" ? "active" : ""}`}
+                    className={`nav-link ${selectedCurrency === "ltc" ? "active" : ""}`}
                   >
-                    USD
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a
-                    href="#link"
-                    onClick={(ev) => {
-                      ev.preventDefault();
-                      setSelectedCurrency("eur");
-                    }}
-                    className={`nav-link ${selectedCurrency === "eur" ? "active" : ""}`}
-                  >
-                    EUR
+                    LTC
                   </a>
                 </li>
                 <li className="nav-item">

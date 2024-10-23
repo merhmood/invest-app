@@ -14,7 +14,7 @@ import {
   Icon,
   PreviewCard,
 } from "../../components/Component";
-import { Form,  Spinner, Alert } from "reactstrap";
+import { Form, Spinner, Alert } from "reactstrap";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 
@@ -64,7 +64,7 @@ const Login = () => {
               <BlockContent>
                 <BlockTitle tag="h4">Sign-In</BlockTitle>
                 <BlockDes>
-                  <p>Access Dashlite using your email and passcode.</p>
+                  <p>Access Dashboard using your email and passcode.</p>
                 </BlockDes>
               </BlockContent>
             </BlockHead>

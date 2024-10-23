@@ -31,11 +31,11 @@ const menu = [
             link: "/invest/index",
           },
           {
-            text: "Plans",
+            text: "Investments",
             link: "/invest/schemes",
           },
           {
-            text: "Invest",
+            text: "Plans",
             link: "/invest/invest",
           },
           {

@@ -6,7 +6,7 @@ const Footer = () => {
     <div className="nk-footer nk-footer-fluid bg-lighter">
       <div className="container-xl">
         <div className="nk-footer-wrap">
-          <div className="nk-footer-copyright"> &copy; 2024 Daniel Investment application</div>
+          <div className="nk-footer-copyright"> &copy; 2024 Union Guard Capital</div>
           <div className="nk-footer-links">
             <ul className="nav nav-sm">
               <li className="nav-item">

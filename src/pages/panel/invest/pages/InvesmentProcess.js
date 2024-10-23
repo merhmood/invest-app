@@ -12,7 +12,6 @@ import {
   DropdownItem,
   DropdownMenu,
   DropdownToggle,
-  
   Modal,
   ModalBody,
   ModalFooter,
@@ -104,14 +103,14 @@ const InvestmentProcess = ({ match }) => {
 
   return (
     <React.Fragment>
-      <Head title="Investment"></Head>
+      <Head title="Invest"></Head>
       {currentPlan && (
         <Content size="lg">
           <BlockHead>
             <BlockHeadContent>
               <BlockHeadSub>
                 <BackTo icon="arrow-left" link={`/invest/invest`}>
-                  Back to plan
+                  Back to plans
                 </BackTo>
               </BlockHeadSub>
             </BlockHeadContent>
