@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Icon from "../../components/icon/Icon";
 import classNames from "classnames";
 import { NavLink, Link } from "react-router-dom";
+import Toggle from "../sidebar/Toggle";
 
 const MenuItem = ({ icon, link, text, sub, newTab, sidebarToggle, mobileView, badge, ...props }) => {
   let currentUrl;
@@ -195,16 +196,23 @@ const MobileMenu = ({ data, sidebarToggle, mobileView }) => {
   return (
     <ul className="nk-menu nk-menu-main ui-s2">
       {data.map((item) => (
-        <MenuItem
-          key={item.text}
-          link={item.link}
-          icon={item.icon}
-          text={item.text}
-          sub={item.subMenu}
-          badge={item.badge}
-          sidebarToggle={sidebarToggle}
-          mobileView={mobileView}
-        />
+        <div onClick={()=>{
+          const mobileMenu = document.querySelector(".mobile-menu")
+          mobileMenu.setAttribute("class", "nk-header-menu mobile-menu")
+          const overlay = document.querySelector(".nk-header-overlay")
+          overlay.setAttribute("class", "")
+        }}>
+          <MenuItem
+            key={item.text}
+            link={item.link}
+            icon={item.icon}
+            text={item.text}
+            sub={item.subMenu}
+            badge={item.badge}
+            sidebarToggle={sidebarToggle}
+            mobileView={mobileView}
+          />
+      </div>
       ))}
     </ul>
   );

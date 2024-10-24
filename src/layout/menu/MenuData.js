@@ -42,10 +42,10 @@ const menu = [
             text: "Transactions",
             link: "/invest/transactions",
           },
-          {
-            text: "Profile",
-            link: "/invest/profile",
-          },
+          // {
+          //   text: "Profile",
+          //   link: "/invest/profile",
+          // },
           // {
           //   text: "Pages",
           //   subMenu: [

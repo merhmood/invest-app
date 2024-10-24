@@ -99,10 +99,10 @@ const Login = () => {
               <div className="form-group">
                 <div className="form-label-group">
                   <label className="form-label" htmlFor="password">
-                    Passcode
+                    Password
                   </label>
                   <Link className="link link-primary link-sm" to={`${process.env.PUBLIC_URL}/auth-reset`}>
-                    Forgot Code?
+                    Forgot Password?
                   </Link>
                 </div>
                 <div className="form-control-wrap">
@@ -140,35 +140,37 @@ const Login = () => {
               {" "}
               New on our platform? <Link to={`${process.env.PUBLIC_URL}/auth-register`}>Create an account</Link>
             </div>
-            <div className="text-center pt-4 pb-3">
-              <h6 className="overline-title overline-title-sap">
-                <span>OR</span>
-              </h6>
-            </div>
-            <ul className="nav justify-center gx-4">
-              <li className="nav-item">
-                <a
-                  className="nav-link"
-                  href="#socials"
-                  onClick={(ev) => {
-                    ev.preventDefault();
-                  }}
-                >
-                  Facebook
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link"
-                  href="#socials"
-                  onClick={(ev) => {
-                    ev.preventDefault();
-                  }}
-                >
-                  Google
-                </a>
-              </li>
-            </ul>
+          {
+          //   <div className="text-center pt-4 pb-3">
+          //   <h6 className="overline-title overline-title-sap">
+          //     <span>OR</span>
+          //   </h6>
+          // </div>
+          // <ul className="nav justify-center gx-4">
+          //   <li className="nav-item">
+          //     <a
+          //       className="nav-link"
+          //       href="#socials"
+          //       onClick={(ev) => {
+          //         ev.preventDefault();
+          //       }}
+          //     >
+          //       Facebook
+          //     </a>
+          //   </li>
+          //   <li className="nav-item">
+          //     <a
+          //       className="nav-link"
+          //       href="#socials"
+          //       onClick={(ev) => {
+          //         ev.preventDefault();
+          //       }}
+          //     >
+          //       Google
+          //     </a>
+          //   </li>
+          // </ul>
+          }
           </PreviewCard>
         </Block>
         <AuthFooter />

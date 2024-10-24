@@ -48,33 +48,15 @@ const User = () => {
         <div className="dropdown-inner">
           <LinkList>
             <LinkItem
-              link={window.location.pathname.split("/")[2] === "invest" ? "/invest/profile" : "/user-profile-regular"}
-              icon="user-alt"
-              onClick={toggle}
-            >
-              View Profile
-            </LinkItem>
-            <LinkItem
               link={
-                window.location.pathname.split("/")[2] === "invest"
-                  ? "/invest/profile-setting"
+                window.location.pathname.split("/")[1] === "invest"
+                  ? "/invest/profile"
                   : "/user-profile-setting"
               }
               icon="setting-alt"
               onClick={toggle}
             >
               Account Setting
-            </LinkItem>
-            <LinkItem
-              link={
-                window.location.pathname.split("/")[2] === "invest"
-                  ? "/invest/profile-activity"
-                  : "/user-profile-activity"
-              }
-              icon="activity-alt"
-              onClick={toggle}
-            >
-              Login Activity
             </LinkItem>
           </LinkList>
         </div>

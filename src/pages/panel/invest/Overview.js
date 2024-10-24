@@ -224,7 +224,7 @@ const Overview = () => {
               <PreviewAltCard className="nk-wg-card card-bordered h-100" bodyClass="h-100">
                 <div className="nk-iv-wg2">
                   <div className="nk-iv-wg2-title">
-                    <h6 className="title">Incoming Wallet Funds</h6>
+                    <h6 className="title">Balance Analysis</h6>
                   </div>
                   <div className="nk-iv-wg2-text">
                     <div className="nk-iv-wg2-amount ui-v2">12,587.96</div>
@@ -262,7 +262,7 @@ const Overview = () => {
                 <div className="nk-iv-wg2">
                   <div className="nk-iv-wg2-title">
                     <h6 className="title">
-                      This Month Profit <Icon name="info" className="text-primary"></Icon>
+                      Profit Analysis
                     </h6>
                   </div>
                   <div className="nk-iv-wg2-text">

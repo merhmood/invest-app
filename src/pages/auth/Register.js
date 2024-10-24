@@ -126,35 +126,37 @@ const Register = ({ history }) => {
                 <strong>Sign in instead</strong>
               </Link>
             </div>
-            <div className="text-center pt-4 pb-3">
-              <h6 className="overline-title overline-title-sap">
-                <span>OR</span>
-              </h6>
-            </div>
-            <ul className="nav justify-center gx-8">
-              <li className="nav-item">
-                <a
-                  className="nav-link"
-                  href="#socials"
-                  onClick={(ev) => {
-                    ev.preventDefault();
-                  }}
-                >
-                  Facebook
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link"
-                  href="#socials"
-                  onClick={(ev) => {
-                    ev.preventDefault();
-                  }}
-                >
-                  Google
-                </a>
-              </li>
-            </ul>
+            {
+            //   <div className="text-center pt-4 pb-3">
+            //   <h6 className="overline-title overline-title-sap">
+            //     <span>OR</span>
+            //   </h6>
+            // </div>
+            // <ul className="nav justify-center gx-8">
+            //   <li className="nav-item">
+            //     <a
+            //       className="nav-link"
+            //       href="#socials"
+            //       onClick={(ev) => {
+            //         ev.preventDefault();
+            //       }}
+            //     >
+            //       Facebook
+            //     </a>
+            //   </li>
+            //   <li className="nav-item">
+            //     <a
+            //       className="nav-link"
+            //       href="#socials"
+            //       onClick={(ev) => {
+            //         ev.preventDefault();
+            //       }}
+            //     >
+            //       Google
+            //     </a>
+            //   </li>
+            // </ul>
+            }
           </PreviewCard>
         </Block>
         <AuthFooter />

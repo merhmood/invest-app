@@ -202,7 +202,7 @@ const Plan = () => {
         <Block size="lg">
           <BlockHead size="sm">
             <BlockTitle tag="h5">
-              Active Plan <span className="count text-base">(2)</span>
+              Active Investments<span className="count text-base">(2)</span>
             </BlockTitle>
           </BlockHead>
           <div className="nk-iv-scheme-list">

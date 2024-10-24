@@ -35,9 +35,11 @@ const Header = ({ fixed, theme, visibility, toggleSidebar, mobileView, className
               <div className="nk-header-brand">
                 <Logo />
               </div>
-              <div className="nk-menu-trigger me-n2">
-                <Toggle className="nk-nav-toggle nk-quick-nav-icon" icon="arrow-left" click={toggleSidebar} />
-              </div>
+              {
+              //   <div className="nk-menu-trigger me-n2">
+              //   <Toggle className="nk-nav-toggle nk-quick-nav-icon" icon="arrow-left" click={toggleSidebar} />
+              // </div>
+              }
             </div>
             {window.location.pathname.split("/")[2] === "invest" && mobileView ? (
               <MobileMenu data={menu[0].subMenu[menu[0].subMenu.length - 1].subPanel} mobileView={mobileView} />
