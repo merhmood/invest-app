@@ -48,11 +48,7 @@ const User = () => {
         <div className="dropdown-inner">
           <LinkList>
             <LinkItem
-              link={
-                window.location.pathname.split("/")[1] === "invest"
-                  ? "/invest/profile"
-                  : "/user-profile-setting"
-              }
+              link="/invest/profile"
               icon="setting-alt"
               onClick={toggle}
             >

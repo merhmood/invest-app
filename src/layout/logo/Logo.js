@@ -1,6 +1,6 @@
 import React from "react";
-import LogoLight2x from "../../images/favicon.png";
-import LogoDark2x from "../../images/favicon.png";
+import LogoLight2x from "../../images/logo2x.png";
+import LogoDark2x from "../../images/logo-dark2x.png";
 import { Link } from "react-router-dom";
 
 const Logo = () => {
@@ -12,7 +12,7 @@ const Logo = () => {
           style={{ display: "flex", alignItems: "center", position: "absolute", top: 9 }}
         >
           <img style={{ width: 60, height: 60, objectFit: "cover" }} src={LogoLight2x} alt="logo" />
-          <span style={{ fontSize: 17 }}>
+          <span style={{ fontSize: "1.2rem", color: "white" }}>
             <span style={{ fontWeight: "bold" }}>Union</span>guardcapital
           </span>
         </span>
@@ -20,7 +20,7 @@ const Logo = () => {
       <div>
         <span className="logo-dark logo-img" style={{ display: "flex", alignItems: "center" }}>
           <img style={{ width: 60, height: 60, objectFit: "cover" }} src={LogoDark2x} alt="logo" />
-          <span style={{ fontSize: 17 }}>
+          <span style={{ fontSize: "1.2rem" }}>
             <span style={{ fontWeight: "bold" }}>Union</span>guardcapital
           </span>
         </span>
