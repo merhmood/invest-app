@@ -261,9 +261,7 @@ const Overview = () => {
               <PreviewAltCard className="nk-wg-card card-bordered h-100" bodyClass="h-100">
                 <div className="nk-iv-wg2">
                   <div className="nk-iv-wg2-title">
-                    <h6 className="title">
-                      Profit Analysis
-                    </h6>
+                    <h6 className="title">Profit Analysis</h6>
                   </div>
                   <div className="nk-iv-wg2-text">
                     <div className="nk-iv-wg2-amount ui-v2">
@@ -387,7 +385,7 @@ const Overview = () => {
                   <div className={`form-control-wrap ${copy ? "clipboard-success" : ""}`}>
                     <CopyToClipboard
                       className="form-clip clipboard-init"
-                      text="https://dashlite.net/?ref=4945KD48"
+                      text="https://unionguardcapital.com/?ref=4945KD48"
                       onCopy={onCopyClick}
                     >
                       <div>
@@ -402,7 +400,7 @@ const Overview = () => {
                       type="text"
                       className="form-control copy-text"
                       id="refUrl"
-                      defaultValue="https://dashlite.net/?ref=4945KD48"
+                      defaultValue="https://unionguardcapital.com/?ref=4945KD48"
                     ></input>
                   </div>
                 </div>
