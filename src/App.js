@@ -19,6 +19,8 @@ import InvoicePrint from "./pages/pre-built/invoice/InvoicePrint";
 import { Switch, Route, withRouter } from "react-router-dom";
 import { RedirectAs404 } from "./utils/Utils";
 
+export const BASE_URL = "https://ugc-api-production.up.railway.app";
+
 const App = () => {
   return (
     <Switch>

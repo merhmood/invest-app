@@ -17,6 +17,7 @@ import {
 import { Form, Spinner, Alert } from "reactstrap";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { BASE_URL } from "../../App";
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
@@ -25,24 +26,35 @@ const Login = () => {
 
   const onFormSubmit = (formData) => {
     setLoading(true);
-    const loginName = "info@softnio.com";
-    const pass = "123456";
-    if (formData.name === loginName && formData.passcode === pass) {
-      localStorage.setItem("accessToken", "token");
-      setTimeout(() => {
-        window.history.pushState(
-          `${process.env.PUBLIC_URL ? process.env.PUBLIC_URL : "/"}`,
-          "auth-login",
-          `${process.env.PUBLIC_URL ? process.env.PUBLIC_URL : "/"}`
-        );
-        window.location.reload();
-      }, 2000);
-    } else {
-      setTimeout(() => {
-        setError("Cannot login with credentials");
-        setLoading(false);
-      }, 2000);
-    }
+    // Http request to Register New user
+    (async () => {
+      const res = await fetch(`${BASE_URL}/users/auth/login`, {
+        body: {
+          email: formData.name,
+          password: formData.passcode,
+        },
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (res.ok) {
+        localStorage.setItem("accessToken", "token");
+        setTimeout(() => {
+          window.history.pushState(
+            `${process.env.PUBLIC_URL ? process.env.PUBLIC_URL : "/"}`,
+            "auth-login",
+            `${process.env.PUBLIC_URL ? process.env.PUBLIC_URL : "/"}`
+          );
+          window.location.reload();
+        }, 2000);
+      } else {
+        setTimeout(() => {
+          setError("Cannot login with credentials");
+          setLoading(false);
+        }, 2000);
+      }
+    })();
   };
 
   const { errors, register, handleSubmit } = useForm();
@@ -89,7 +101,6 @@ const Login = () => {
                     id="default-01"
                     name="name"
                     ref={register({ required: "This field is required" })}
-                    defaultValue="info@softnio.com"
                     placeholder="Enter your email address or username"
                     className="form-control-lg form-control"
                   />
@@ -122,7 +133,6 @@ const Login = () => {
                     type={passState ? "text" : "password"}
                     id="password"
                     name="passcode"
-                    defaultValue="123456"
                     ref={register({ required: "This field is required" })}
                     placeholder="Enter your passcode"
                     className={`form-control-lg form-control ${passState ? "is-hidden" : "is-shown"}`}
@@ -140,37 +150,6 @@ const Login = () => {
               {" "}
               New on our platform? <Link to={`${process.env.PUBLIC_URL}/auth-register`}>Create an account</Link>
             </div>
-          {
-          //   <div className="text-center pt-4 pb-3">
-          //   <h6 className="overline-title overline-title-sap">
-          //     <span>OR</span>
-          //   </h6>
-          // </div>
-          // <ul className="nav justify-center gx-4">
-          //   <li className="nav-item">
-          //     <a
-          //       className="nav-link"
-          //       href="#socials"
-          //       onClick={(ev) => {
-          //         ev.preventDefault();
-          //       }}
-          //     >
-          //       Facebook
-          //     </a>
-          //   </li>
-          //   <li className="nav-item">
-          //     <a
-          //       className="nav-link"
-          //       href="#socials"
-          //       onClick={(ev) => {
-          //         ev.preventDefault();
-          //       }}
-          //     >
-          //       Google
-          //     </a>
-          //   </li>
-          // </ul>
-          }
           </PreviewCard>
         </Block>
         <AuthFooter />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Content from "../../../layout/content/Content";
 import Head from "../../../layout/head/Head";
 import { Link } from "react-router-dom";
@@ -15,8 +15,18 @@ import {
 } from "../../../components/Component";
 import { Button, Card, Col, DropdownItem, DropdownMenu, DropdownToggle, Row, UncontrolledDropdown } from "reactstrap";
 import { ProfitCharts } from "../../../components/partials/charts/panel/PanelCharts";
+import { BASE_URL } from "../../../App";
 
 const Plan = () => {
+  const [investments, setInvestments] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const res = await fetch(`${BASE_URL}/investments`);
+      console.log(res.body);
+      //setInvestments(res.body)
+    })();
+  });
   return (
     <React.Fragment>
       <Head title="Investments"></Head>
@@ -58,16 +68,6 @@ const Plan = () => {
                   </li>
                   <li className="opt-menu-md">
                     <UncontrolledDropdown>
-                      {
-                        // <DropdownToggle
-                        //   className="btn btn-white btn-light btn-icon"
-                        //   tag="a"
-                        //   href="#toggle"
-                        //   onClick={(ev) => ev.preventDefault()}
-                        // >
-                        //   <Icon name="setting"></Icon>
-                        // </DropdownToggle>
-                      }
                       <DropdownMenu end>
                         <ul className="link-list-opt no-bdr">
                           <li>
@@ -131,16 +131,7 @@ const Plan = () => {
                   </Col>
                   <Col lg="7">
                     <div className="nk-iv-wg3">
-                      <div className="nk-iv-wg3-title" style={{ marginTop: 35 }}>
-                        {
-                          // <TooltipComponent
-                          //   icon="info-fill"
-                          //   direction="right"
-                          //   text="Current Month Profit"
-                          //   id="month-profit"
-                          // ></TooltipComponent>
-                        }
-                      </div>
+                      <div className="nk-iv-wg3-title" style={{ marginTop: 35 }}></div>
                       <div className="nk-iv-wg3-group flex-md-nowrap g-4">
                         <div className="nk-iv-wg3-sub-group gx-4">
                           <div className="nk-iv-wg3-sub">
@@ -176,23 +167,6 @@ const Plan = () => {
                       <Icon name="notes-alt"></Icon> <span>Go to Transaction</span>
                     </Link>
                   </li>
-                  {
-                    //   <li>
-                    //   <a href="#nav" onClick={(ev) => ev.preventDefault()}>
-                    //     <Icon name="growth"></Icon> <span>Analytic Reports</span>
-                    //   </a>
-                    // </li>
-                    // <li>
-                    //   <a href="#nav" onClick={(ev) => ev.preventDefault()}>
-                    //     <Icon name="report-profit"></Icon> <span>Monthly Statement</span>
-                    //   </a>
-                    // </li>
-                    // <li>
-                    //   <a href="#nav" onClick={(ev) => ev.preventDefault()}>
-                    //     <Icon name="help"></Icon> <span>Investment Tips</span>
-                    //   </a>
-                    // </li>
-                  }
                 </ul>
               </div>
             </div>
